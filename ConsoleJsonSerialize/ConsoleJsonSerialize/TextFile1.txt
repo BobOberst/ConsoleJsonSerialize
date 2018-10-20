@@ -1,0 +1,41 @@
+﻿Product p1 = new Product
+{
+    Name = "Product 1",
+    Price = 99.95m,
+    ExpiryDate = new DateTime(2000, 12, 29, 0, 0, 0, DateTimeKind.Utc),
+};
+Product p2 = new Product
+{
+    Name = "Product 2",
+    Price = 12.50m,
+    ExpiryDate = new DateTime(2009, 7, 31, 0, 0, 0, DateTimeKind.Utc),
+};
+
+List<Product> products = new List<Product>();
+products.Add(p1);
+products.Add(p2);
+
+string json = @"[
+  {
+    'Name': 'Product 1',
+    'ExpiryDate': '2000-12-29T00:00Z',
+    'Price': 99.95,
+    'Sizes': null
+  },
+  {
+    'Name': 'Product 2',
+    'ExpiryDate': '2009-07-31T00:00Z',
+    'Price': 12.50,
+    'Sizes': null
+  }
+]";
+
+List<Product> products = JsonConvert.DeserializeObject<List<Product>>(json);
+
+Console.WriteLine(products.Count);
+// 2
+
+Product p1 = products[0];
+
+Console.WriteLine(p1.Name);
+// Product 1

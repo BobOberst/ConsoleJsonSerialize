@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "Product 1",
+    "Price": 99.95,
+    "ExpiryDate": "2000-12-29T00:00:00Z"
+  },
+  {
+    "Name": "Product 2",
+    "Price": 12.50,
+    "ExpiryDate": "2009-07-31T00:00:00Z"
+  }
+]
